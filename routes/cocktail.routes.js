@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const validateToken = require('../middleware/validateToken.middleware');
 
 const {
   getAll,
@@ -11,7 +12,7 @@ const {
  * GET
  */
 router.get('/', getAll);
-router.get('/:id', getOne);
+router.get('/:id',validateToken, getOne);
 
 /**
  * POST

@@ -28,6 +28,7 @@ const getAll = (req, res, next) => {
 const getOne = (req, res, next) => {
   try {
     const { id } = req.params;
+    console.log('USER --> ', req.user);
     if (!isValidObjectId(id)) {
       throw new Error('Error: Invalid mongo ID');
     }
